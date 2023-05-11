@@ -1,25 +1,23 @@
 const main = async () => {
+    const [owner, randomPerson] = await hre.ethers.getSigners();
     const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
     const waveContract = await waveContractFactory.deploy();
     await waveContract.deployed();
-    console.log("Contract addy:", waveContract.address);
   
-    let waveCount;
-    waveCount = await waveContract.getTotalWaves();
-    console.log(waveCount.toNumber());
+    console.log("Contract deployed to:", waveContract.address);
+    console.log("Contract deployed by:", owner.address);
   
-    /**
-     * Let's send a few waves!
-     */
-    let waveTxn = await waveContract.wave("A message!");
-    await waveTxn.wait(); // Wait for the transaction to be mined
+    await waveContract.getTotalWaves();
   
-    const [_, randomPerson] = await hre.ethers.getSigners();
-    waveTxn = await waveContract.connect(randomPerson).wave("Another message!");
-    await waveTxn.wait(); // Wait for the transaction to be mined
+    const firstWaveTxn = await waveContract.wave();
+    await firstWaveTxn.wait();
   
-    let allWaves = await waveContract.getAllWaves();
-    console.log(allWaves);
+    await waveContract.getTotalWaves();
+  
+    const secondWaveTxn = await waveContract.connect(randomPerson).wave();
+    await secondWaveTxn.wait();
+  
+    await waveContract.getTotalWaves();
   };
   
   const runMain = async () => {
