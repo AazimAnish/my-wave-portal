@@ -1,18 +1,22 @@
-# my-wave-portal
+### Windows
 
-ethereum dApp.
+```sh
+1. cd my-wave-portal
+2. npm install
+3. type nul >> ".env"       # This will create a .env file
+```
 
-# Sample Hardhat Project
+### Linux or MacOS
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+```sh
+1. cd my-wave-portal
+2. npm install
+3. touch .env               # This will create a .env file
+```
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+```sh
+# This should be in your .ENV file
+ALCHEMY_API=YOUR_ALCHEMY_API_KEY
+PRIVATE_KEY=YOUR_WALLET_PRIVATE_KEY
 ```
 
