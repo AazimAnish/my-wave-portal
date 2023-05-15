@@ -1,0 +1,114 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-image: url("src/images/gradient.jpg");
+  align-items: center;
+  height: 100vh; 
+  background-size: cover;
+  background-position: center; 
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  top: 200px;
+  position: absolute;
+}
+
+.header {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  color: white;
+}
+
+.bio {
+  text-align: center;
+  color: #c6c6c6 ;
+  margin-top: 16px;
+}
+
+.waveButton {
+  cursor: pointer;
+  margin-top: 16px;
+  padding: 8px;
+  border: 0;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #a800ff 0%, #2b0041 100%);
+  color: white;
+  font-weight: bold;
+}
+
+.waveButton:hover {
+  animation: shake 0.5s;
+  animation-iteration-count:0.5;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  20% {
+    transform: translate(-10px, 0px) rotate(-5deg);
+  }
+  40% {
+    transform: translate(10px, 0px) rotate(5deg);
+  }
+  60% {
+    transform: translate(-10px, 0px) rotate(-5deg);
+  }
+  80% {
+    transform: translate(10px, 0px) rotate(5deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+.connectButton {
+  cursor: pointer;
+  position: absolute;
+  top: 300px;
+  left: 223px;
+  padding: 16px 32px;
+  border: 0;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #a800ff 0%, #2b0041 100%);
+  box-shadow: 0px 5px 0px #000000;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  font-weight: bold;
+}
+
+.connectButton:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 0px #000000;
+}
+
+.total {
+  text-align: center;
+  color: #c6c6c6 ;
+  margin-top: 16px;
+}
+
+.waveMessage {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  margin: 20px;
+}
+
+.displayBox {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+}
+
